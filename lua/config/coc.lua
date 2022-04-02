@@ -9,8 +9,8 @@ vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', {})
 
 vim.api.nvim_set_keymap('n', '<leader>rn', '<Plug>(coc-rename)', {})
 
-vim.api.nvim_set_keymap('n', '<leader>f', '<Plug>(coc-format-selected)', {})
-vim.api.nvim_set_keymap('x', '<leader>f', '<Plug>(coc-format-selected)', {})
+vim.api.nvim_set_keymap('n', '<leader>fs', '<Plug>(coc-format-selected)', {})
+vim.api.nvim_set_keymap('x', '<leader>fs', '<Plug>(coc-format-selected)', {})
 
 vim.cmd [[
 	inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
