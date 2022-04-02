@@ -8,6 +8,5 @@
 	"python.linting.flake8Enabled": true,
 	"python.linting.pytypeEnabled": true,
 	"pyright.organizeimports.provider": "isort",
-	"python.analysis.typeCheckingMode": "strict",
-	"solargraph.formatting": true
+	"python.analysis.typeCheckingMode": "strict"
 }

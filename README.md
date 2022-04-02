@@ -16,7 +16,6 @@ If you want to use my coc-nvim extensions as well, go ahead and install these:
 * `coc-tsserver`
 * `coc-toml`
 * `coc-sql`
-* `coc-solargraph`
 * `coc-pyright`
 * `coc-phpls`
 * `coc-json`
