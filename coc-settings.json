@@ -1,0 +1,13 @@
+{
+	"toml.formatter.arrayAutoExpand": true,
+	"toml.formatter.arrayAutoCollapse": true,
+	"toml.formatter.arrayTrailingComma": true,
+	"python.formatting.provider": "black",
+	"python.linting.enabled": true,
+	"python.linting.mypyEnabled": true,
+	"python.linting.flake8Enabled": true,
+	"python.linting.pytypeEnabled": true,
+	"pyright.organizeimports.provider": "isort",
+	"python.analysis.typeCheckingMode": "strict",
+	"solargraph.formatting": true
+}
