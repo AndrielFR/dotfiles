@@ -39,8 +39,7 @@ require 'paq' {
 	'matze/vim-move';
 	'arzg/vim-colors-xcode';
 	'akinsho/toggleterm.nvim';
-	'vim-airline/vim-airline';
-	'vim-airline/vim-airline-themes';
+	'nvim-lualine/lualine.nvim';
 };
 
 -- nvim_todo
@@ -100,5 +99,5 @@ require 'config.colors_xcode'
 -- toggleterm.nvim
 require 'config.toggleterm'
 
--- vim-airline
-require 'config.airline'
+-- lualine.nvim
+require 'config.lualine'
