@@ -57,10 +57,6 @@ o.updatetime = 100
 -- Enable colors on term
 set.termguicolors = true
 
--- Set listchars
-set.list = true
-set.listchars = {eol = '↴', tab = '▸ ', trail = '·', space = '·'}
-
 -- Set the error format
 set.errorformat:prepend('%f|%l col %c|%m')
 
