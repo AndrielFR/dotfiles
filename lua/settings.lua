@@ -16,10 +16,6 @@ vim.cmd 'filetype indent on'
 -- Turn syntax highlighting on
 vim.cmd 'syntax enable'
 
--- Add numbers to each line on the left-hand side
-o.number = true
-wo.relativenumber = true
-
 -- Turn on autoindent
 o.autoindent = true
 
