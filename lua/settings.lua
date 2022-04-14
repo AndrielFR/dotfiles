@@ -35,6 +35,12 @@ o.showmode = true
 -- Show matching words during a search
 o.showmatch = true
 
+-- Show the current line
+o.cursorline = true
+
+-- Enable the tab line
+o.showtabline = 2
+
 -- Use highlighting when doing a search
 o.hlsearch = true
 
@@ -60,8 +66,12 @@ set.termguicolors = true
 -- Set the error format
 set.errorformat:prepend('%f|%l col %c|%m')
 
+-- Enable wildmenu
+set.wildmenu = true
+
 -- Ignore these paths
 set.wildignore = '*/cache/*,*/tmp/*'
 
 -- Other
+o.laststatus = 2
 set.completeopt = 'menu,menuone,noselect'

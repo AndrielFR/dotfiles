@@ -1,3 +1,6 @@
+-- Enable ALE completion
+vim.g.ale_completion_enabled = 1
+
 -- Initialize plugins
 require 'paq' {
 	'savq/paq-nvim';
@@ -16,9 +19,15 @@ require 'paq' {
 	'lewis6991/gitsigns.nvim';
 	'nvim-telescope/telescope.nvim';
 
-	{'neoclide/coc.nvim', branch = 'release'};
+	'prabirshrestha/asyncomplete.vim';
+	'prabirshrestha/asyncomplete-neosnippet.vim';
+	'prabirshrestha/asyncomplete-buffer.vim';
+	'prabirshrestha/asyncomplete-file.vim';
+	'andreypopp/asyncomplete-ale.vim';
+	'laixintao/asyncomplete-gitcommit';
+	'dense-analysis/ale';
+	'Shougo/neosnippet.vim';
 	'honza/vim-snippets';
-	'rafamadriz/friendly-snippets';
 	{'rrethy/vim-hexokinase', run = 'make hexokinase'};
 	'sheerun/vim-polyglot';
 
@@ -55,7 +64,7 @@ require 'config.gitsigns'
 require 'config.telescope'
 
 -- coc.nvim
-require 'config.coc'
+require 'config.asyncomplete'
 
 -- vim-hexokinase
 require 'config.hexokinase'
