@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+xrdb -load "$XDG_CONFIG_HOME"/X11/Xresources &
+
+xmonad 2>/dev/null 2>&1
