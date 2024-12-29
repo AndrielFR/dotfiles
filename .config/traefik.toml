@@ -1,0 +1,16 @@
+[api]
+  dashboard = true
+
+[entryPoints]
+    [entryPoints.http]
+        address = ":8080"
+        [entryPoints.http.http.redirections.entryPoint]
+            to = "https"
+            scheme = "https"
+
+    [entryPoints.https]
+        address = ":8090"
+
+[providers.docker]
+  watch = true
+  network = "http"
