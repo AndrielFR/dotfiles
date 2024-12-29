@@ -1,9 +1,9 @@
+local snippy = require("snippy")
+
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
-
-local snippy = require("snippy")
 
 local kind_icons = {
 	Text = "",
@@ -31,8 +31,8 @@ local kind_icons = {
 	Event = "",
 	Operator = "",
 	TypeParameter = "",
-	Supermaven = "",
 	Copilot = "",
+	Supermaven = "",
 }
 
 local cmp = require("cmp")
@@ -60,7 +60,14 @@ cmp.setup({
 		end,
 	},
 	enabled = function()
-		-- disable completion in comments
+		-- disable autocompletion in prompt (wasn't playing good with telescope)
+		local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+
+		if buftype == "prompt" then
+			return false
+		end
+
+		-- disable autocompletion in comments
 		local context = require("cmp.config.context")
 
 		-- keep command mode completion enabled when cursor is in a comment
@@ -76,8 +83,9 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		["<C-j>"] = cmp.mapping.scroll_docs(-4),
-		["<C-k>"] = cmp.mapping.scroll_docs(4),
+		["<C-e>"] = cmp.mapping.close(),
+		["<C-j>"] = cmp.mapping.scroll_docs(4),
+		["<C-k>"] = cmp.mapping.scroll_docs(-4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
@@ -109,27 +117,46 @@ cmp.setup({
 		{ name = "tmux" },
 		{ name = "supermaven" },
 		{ name = "copilot" },
+		{ name = "nvim_lsp" },
 		{ name = "snippy" },
 		{ name = "buffer" },
-		{ name = "nvim_lsp" },
 		{ name = "neorg" },
 		{ name = "cmp_yanky" },
 		{ name = "fish" },
 		{ name = "crates" },
+	},
+	sorting = {
+		comparators = {
+			cmp.config.compare.offset,
+			cmp.config.compare.exact,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.score,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.kind,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+		},
 	},
 })
 
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = "cmdline" },
 		{ name = "async_path" },
+		{ name = "cmdline" },
 	},
 })
 
 cmp.setup.cmdline({ "/", "?" }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
+		{ name = "buffer" },
+	},
+})
+
+cmp.setup.filetype("gitcommit", {
+	sources = {
+		{ name = "git" },
 		{ name = "buffer" },
 	},
 })

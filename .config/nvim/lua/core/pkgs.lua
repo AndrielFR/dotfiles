@@ -32,6 +32,7 @@ return {
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-buffer",
 			"mtoohey31/cmp-fish",
+			"petertriho/cmp-git",
 			"chrisgrieser/cmp_yanky",
 
 			-- supermaven
